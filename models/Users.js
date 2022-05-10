@@ -37,8 +37,14 @@ const Users = sequelize.define("users", {
     // },
   },
   phone: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: true,
+    // validate: {
+    //   is: {
+    //     args: /^(+62|62)?[\s-]?0?8[1-9]{1}\d{1}[\s-]?\d{4}[\s-]?\d{2,5}$/,
+    //     msg: "Wrong Phone Format!",
+    //   },
+    // },
   },
   is_verified: {
     type: DataTypes.BOOLEAN,
@@ -51,7 +57,7 @@ const Users = sequelize.define("users", {
   last_login: {
     type: DataTypes.DATE,
     allowNull: true,
-  }
+  },
 });
 
 module.exports = Users;
